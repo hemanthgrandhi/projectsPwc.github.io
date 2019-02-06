@@ -1,0 +1,46 @@
+{
+	"person": {
+		"name": "Hemanth GRANDHI",
+		"occupation": "CONSULTANT",
+		"objective": "The objective of my life is to become an avid programmer, and focus on creating new technology in order to pave a bright future for the future generations.I always follow the motto of PwC, which is to 'Build trust in the society and solve important problems!'"
+
+	},
+
+	
+	"contact": {
+		"address": "310 Aditya Windsor, Hi-Tech City, Hyderabad",
+		"tel": "+91 9445924308",
+		"mobile": "+91 9652412710",
+		"email": "hsgrandhi@gmail.com"
+	},
+
+	"job": [{
+			"jobtitle": "INTERN AT PWC",
+			"jobyear": "Jan 2019-May 2019",
+			"jobcontent": "Worked on various projects regarding IoT, front end development,Microsoft azure platform,etc.Learned different coding skills from HTML,CSS and JS.Built strong relationshipswith the other employees and learnt important leadership skills."
+		},
+
+		{
+			"jobtitle": "INTERN AT ECIL",
+			"jobyear": "May2018-July2018",
+			"jobcontent": "Worked on Android Development and learnt the basics of Java Programming. Was mentored by a guide who taught us how to make a basic android application using Eclipse IDE.With the help of the guide,I developed an Android application to manage an Online Pharmacy."
+		}
+	],
+
+	"education": [{
+			"educationname": "B.Tech",
+			"educationyear": "2015-2019|VIT",
+			"educationcontent": "Did my Bachelors of Technology at Vellore Institute of Technology, Vellore. I majored in Computer Science and passed out with a CGPA of 8.6."
+		},
+
+		{
+			"educationname": "Secondary Education",
+			"educationyear": "2013-2015|NARAYANA",
+			"educationcontent": "Did my 11th and 12th in Narayana group of institutions and took coaching there for IIT."
+
+		}
+	]
+
+
+
+}

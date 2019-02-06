@@ -1,0 +1,276 @@
+*{
+    box-sizing: border-box;
+    outline: none;
+}
+    
+.container{
+    display:flex;
+    height:100%;
+}
+
+.title{
+    background-color: #434144;
+    display:block;
+    height:10%;
+    align-content: center;  
+}
+
+#notify{
+    color:white;
+    text-align:center;
+    margin-top:0;
+    margin-left:0;
+    padding-top:0.5em;
+    position:sticky;   
+}
+
+.navigation{
+    flex:15%;
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;   
+}
+
+.navigationItem{
+    display:block;
+    width:100%;
+    height:33.333%;
+    background-color: #434144;
+    border-bottom:0.75em solid whitesmoke;
+    border-top:0.75em solid whitesmoke;
+    border-right:0.75em solid whitesmoke;;
+    color:whitesmoke;   
+}
+
+button:hover{
+    background-color:#b95a37;
+}
+
+.whole{
+    flex:85%;
+    height:100%;   
+}
+
+.content{  
+    background-color: #242323;
+    height:100%;
+    padding-top:2em;
+    padding-left:2em;
+    overflow:scroll;  
+}
+
+.notes{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: row;
+    grid-gap: 3em;
+    align-items: stretch;
+    justify-content: right;
+    padding: 0px 4px;
+    z-index: -1;
+}
+
+.noteInstance{
+    display:grid;
+    grid-template-columns: 0.85fr 0.15fr;
+    grid-auto-rows: 0.10fr 0.90fr;
+    grid-template-areas:"noteTitle noteClose"
+                        "noteContent noteContent";
+    grid-row-gap: 0;
+    grid-column-gap: 0;
+    border: 2px solid whitesmoke;
+    border-radius: 3px;
+    background-color: #434144;
+    height:17em;
+    width:17em;
+}
+
+.noteTitle{
+    display:block;
+    grid-area: noteTitle;
+    height:100%;
+    width:100%;
+    background-color: #3a383b;
+    text-align: center;
+    color:whitesmoke;
+    margin-left:0;
+    text-align: center;   
+}
+
+.noteClose{
+    grid-area:noteClose;
+    position: relative;
+    color:#b95a37;
+    width:100%;
+    height:100%;
+    text-align:center;
+    justify-content: center;
+    float:right;
+    margin-right:0;
+    background-color: #3a383b;
+}
+
+.noteClose:hover{
+    background-color: #f44336;
+    color: white;
+}
+
+.noteContent{
+    grid-area:noteContent;
+    display:block;
+    height:90%;
+    width:100%;
+    color:whitesmoke;
+    margin-left:0;
+    margin-top:5%;
+}
+
+.createNote{
+    display:none;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+    height:90%;
+    background-color: 434144;
+    border:3px solid white; 
+    z-index: -1; 
+}
+
+.createNoteTitle{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+}
+
+input[type=text]{
+    margin-top:2em;
+    margin-left:2.5em;
+    display:block;
+    color:whitesmoke;
+    background-color: #242323;
+    border:1px solid #b95a37;
+}
+
+textarea{
+    display:block;
+    height:75%;
+    width:95%;
+    color:whitesmoke;
+    background-color: #242323;
+    border:1px solid #b95a37;
+    margin-left:1em;
+    margin-right:3em;
+}
+
+.addnote{
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+    margin-top:0.5em;
+    display:block;
+    background-color: #242323;
+    border: 2px solid whitesmoke;
+    color:whitesmoke; 
+}
+
+.addButton{
+    width:20%;
+    height:3em;
+    float:left;
+    background-color:3a383b;
+    color:whitesmoke;
+    border:1px solid #b95a37;
+    margin-top:0;
+
+}
+
+.addbutton:hover{
+    background-color:whitesmoke;
+    color:#b95a37;
+}
+
+.toDo{
+    display:block;
+    margin-top:0;
+    /*grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap:2px;*/  
+}
+
+.toDoHead{
+    display:inline;
+}
+
+.inputType2{
+    height:3em;
+    width:70%;
+    color:whitesmoke;
+    background-color: #242323;
+    border:1px solid #b95a37;
+    margin-top:10%;
+}
+
+.toDoItems{
+    display:block;
+    margin-top:1em;
+}
+
+#toDoList{
+    list-style-type:none;
+    margin-top:3em;
+}
+
+.toDoListItem{
+    color:whitesmoke;
+    background-color: #3a383b;
+    border:1px solid whitesmoke;
+    text-align:center;
+    height:10%;
+    width:75%;
+    margin-top:1em;
+    padding-bottom:0.5em;
+    padding-top:0.5em;
+}
+
+.close {
+    position: absolute;
+    right: 21.5%;
+    color:#b95a37;
+    width:6%;
+    height:6%;
+    text-align:center;
+    justify-content: center;
+    margin-top:1px;
+    margin-bottom:2em;
+    padding-top:1px;
+    padding-bottom:2em;
+}
+
+/*.close2 {
+    grid-area: "noteClose";
+    display:block;
+    position: absolute;
+    right: 21.5%;
+    color:#b95a37;
+    width:3%;
+    height:2%;
+    text-align:center;
+    justify-content: center;
+    margin-top:1px;
+    margin-bottom:2em;
+    margin-right:20em;
+    padding-top:1px;
+    padding-bottom:2em;
+}
+
+.close2:hover {
+    background-color: #f44336;
+    color: white;
+}*/
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}

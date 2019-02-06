@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="notes.css" type="text/css">
+        <title>Notify - Unleash your productivity</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="navigation">
+                <div><button id ="button1" class="navigationItem" onclick="viewNotes()"><b>VIEW NOTES</b></button></div>
+                <div><button class="navigationItem" onclick="createNote()"><b>CREATE NOTE</b></button></div>
+                <div><button class="navigationItem" onclick="toDoFunction()"><b>TO-DO</b></button></div>
+            </div>
+            <div class="whole">
+                    <div class="title">
+                        <h1 id="notify">NOTIFY</h1>
+                    </div>
+                    <div class="content">
+                        <div class="notes" id="notes"></div>
+                        <div class="createNote" id="createNote">
+                            <div class="createNoteTitle">
+                                <form name="form1"><input class="inputType1" id="noteTitleRead" type="text" name="notetitle" placeholder="Enter title of the note."></form>
+                            </div>
+                            <br>
+                            <div class="createNoteContent">
+                                <form name="form2"><textarea id="noteContentRead" name="notecontent" placeholder="Enter your note."></textarea></form>
+                            </div>
+                            <button class="addnote" onclick="addNote()"><b>ADD NOTE</b></button>
+                        </div>
+                        <div class="toDo" id="toDo">
+                            <div class="toDoHead">
+                                <form name="form3">
+                                    <input type="text" style="float:left;margin-top:0;" id="toDoInput" class="inputType2" placeholder="Enter to do item...">
+                                </form>
+                                    <button onclick="addListItem()" class="addButton">ADD ITEM</button>
+                            </div>
+                            <br>
+                            <div class="toDoItems">
+                                <ul id="toDoList" contenteditable="true">   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <script>
+            function viewNotes(){
+                document.getElementById("createNote").style.display="none";
+                document.getElementById("notes").style.display="grid";
+                document.getElementById("toDo").style.display="none";
+            }
+
+            function createNote(){
+                document.getElementById("createNote").style.display="block";
+                document.getElementById("notes").style.display="none";
+                document.getElementById("toDo").style.display="none";
+            }
+
+            function toDoFunction(){
+                document.getElementById("createNote").style.display="none";
+                document.getElementById("notes").style.display="none";
+                document.getElementById("toDo").style.display="block";
+            }
+
+            function addNote(){
+                var title = '';
+                title = document.getElementById("noteTitleRead").value;
+                var content='';
+                content = document.getElementById("noteContentRead").value;
+                var output='';
+                output = '<div class="noteInstance">'+
+                                    '<div class="noteTitle"><b>' + title + '</b></div><span class="noteClose">X</span>' +
+                                    '<div class="noteContent" contenteditable="true"><b>' + content + '</b></div>' +
+                                '</div>' ;
+                document.getElementById("notes").innerHTML += output;
+                document.form1.reset();
+                document.form2.reset();
+                document.getElementById("button1").click();
+                var close2 = document.getElementsByClassName("noteClose");
+                var k;
+                for (k = 0; k < close2.length; k++) {
+                    close2[k].onclick = function() {
+                        var div = this.parentElement;
+                        div.style.display = "none";    
+                    }   
+                }
+            }
+
+            function addListItem(){
+                var inputtxt='';
+                inputtxt+=document.getElementById("toDoInput").value;
+                var output='';
+                output+='<li class="toDoListItem">' + inputtxt + '<span class="close">X</span></li>';
+                document.getElementById("toDoList").innerHTML += output;
+                document.form3.reset();
+               /* var mynodelist;
+                myNodelist = document.getElementsByTagName("li");
+                var i;
+                for (i = 0; i < myNodelist.length; i++) {
+                    var span = document.createElement("SPAN");
+                    var txt = document.createTextNode("x");
+                    span.className = "close";
+                    span.appendChild(txt);
+                    myNodelist[i].appendChild(span);
+                    var list = document.querySelector(".toDoListItem");
+                    list.onclick= function(){
+                    list.contentEditable=true;
+                    }
+                }*/
+                var close = document.getElementsByClassName("close");
+                var i;
+                for (i = 0; i < close.length; i++) {
+                    close[i].onclick = function() {
+                        var div = this.parentElement;
+                        div.style.display = "none";
+                    }
+                }      
+            }
+        </script>
+    </body>
+</html>
